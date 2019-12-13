@@ -18,5 +18,10 @@
   "bugs": {
     "url": "https://github.com/Kounah/soobridit-crawler/issues"
   },
-  "homepage": "https://github.com/Kounah/soobridit-crawler#readme"
+  "homepage": "https://github.com/Kounah/soobridit-crawler#readme",
+  "dependencies": {
+    "kouna-lib": "git+https://github.com/Kounah/kouna-lib.git",
+    "mongoose": "^5.8.1",
+    "puppeteer": "^2.0.0"
+  }
 }
