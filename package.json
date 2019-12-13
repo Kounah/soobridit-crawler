@@ -1,0 +1,22 @@
+{
+  "name": "soobridit-crawler",
+  "version": "1.0.0",
+  "description": "crawls soobridits for media",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test --all"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kounah/soobridit-crawler.git"
+  },
+  "keywords": [
+    "crawler"
+  ],
+  "author": "Kounah",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/Kounah/soobridit-crawler/issues"
+  },
+  "homepage": "https://github.com/Kounah/soobridit-crawler#readme"
+}
