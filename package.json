@@ -4,7 +4,11 @@
   "description": "crawls soobridits for media",
   "main": "index.js",
   "scripts": {
-    "test": "node test --all"
+    "test": "node test --all",
+    "start": "node bin/soobridit.js"
+  },
+  "bin": {
+    "soobridit": "./bin/soobridit.js"
   },
   "repository": {
     "type": "git",

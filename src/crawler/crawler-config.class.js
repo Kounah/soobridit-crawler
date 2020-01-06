@@ -10,7 +10,17 @@ const defaults = {
   protocol: 'https',
   host: 'old.reddit.com',
   type: 'old',
-  soobridit: ''
+  soobridit: '',
+  category: 'new',
+  delay: 0,
+  browser: {},
+  mongo: {
+    url: 'mongodb://127.0.0.1:27017/soobridit-crawler',
+    connectionOptions: {
+      useNewUrlParser: true,
+      useUnifiedTopology: true
+    }
+  }
 };
 
 class CrawlerConfig {
@@ -28,14 +38,16 @@ class CrawlerConfig {
     /**@type {CrawlerType} */
     this.type = defined(props.type, defaults.type);
     /**@type {SoobriditCategory} */
-    this.soobriditCategory = defined(props.category, defaults.category);
+    this.category = defined(props.category, defaults.category);
     /**@type {string} */
     this.soobridit = defined(props.soobridit, defaults.soobridit);
     /**@type {number} */
-    this.delay = defined(porops.delay, defaults.delay);
-
+    this.delay = defined(props.delay, defaults.delay);
+    
     /**@type {import('../mongo/mongo-config.class').Class} */
     this.mongo = extend(defaults.mongo, props.mongo);
+    /**@type {import('puppeteer').LaunchOptions} */
+    this.browser = extend(defaults.browser, props.browser);
   }
 }
 
