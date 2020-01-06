@@ -31,6 +31,8 @@ class CrawlerConfig {
     this.soobriditCategory = defined(props.category, defaults.category);
     /**@type {string} */
     this.soobridit = defined(props.soobridit, defaults.soobridit);
+    /**@type {number} */
+    this.delay = defined(porops.delay, defaults.delay);
 
     /**@type {import('../mongo/mongo-config.class').Class} */
     this.mongo = extend(defaults.mongo, props.mongo);
