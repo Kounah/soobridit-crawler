@@ -25,7 +25,9 @@
   "homepage": "https://github.com/Kounah/soobridit-crawler#readme",
   "dependencies": {
     "kouna-lib": "git+https://github.com/Kounah/kouna-lib.git",
+    "mime": "^2.4.4",
     "mongoose": "^5.8.1",
-    "puppeteer": "^2.0.0"
+    "puppeteer": "^2.0.0",
+    "turndown": "^5.0.3"
   }
 }

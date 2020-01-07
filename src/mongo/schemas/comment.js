@@ -21,8 +21,9 @@ let schema = new mongoose.Schema({
     type: mongoose.SchemaTypes.ObjectId,
     ref: 'Comment'
   },
-  content: {
-    type: String
+  media: {
+    type: mongoose.SchemaTypes.ObjectId,
+    ref: 'Media'
   }
 }, {
   timestamps: {

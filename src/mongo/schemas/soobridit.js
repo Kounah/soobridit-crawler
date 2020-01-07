@@ -3,6 +3,7 @@ const {Schema} = require('mongoose');
 /**
  * @typedef {Object} Soobridit
  * @prop {String} name
+ * @prop {String} fullname
  * @prop {Number} members
  */
 
@@ -12,9 +13,14 @@ let schema = new Schema({
     unique: true,
     required: true
   },
+  fullname: {
+    type: String,
+    unique: true,
+    required: true
+  },
   members: {
     type: Number
-  }
+  },
 }, {
   timestamps: {
     createdAt: 'created',
