@@ -21,6 +21,9 @@ let schema = new Schema({
   members: {
     type: Number
   },
+  type: {
+    type: String
+  }
 }, {
   timestamps: {
     createdAt: 'created',

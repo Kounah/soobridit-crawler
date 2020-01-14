@@ -1,7 +1,9 @@
 const Media = require('./media.class');
+const WebRequest = require('kouna-lib/web/web-request.class');
 
 /**
  * creates media from markdown string
+ * @function
  * @param {string} content
  * @returns {Media}
  */
@@ -16,8 +18,43 @@ function markdown (content) {
 
 /**
  * creates media from a link
- * @param {*} url 
+ * @function
+ * @param {string|import('url').URL} url 
+ * @returns {Promise.<Media>}
  */
-function link (url) {
-  // TODO: write request (write one for files in the lib first)
+async function link (url) {
+  let req = new WebRequest(url, {
+    encoding: 'utf-8',
+    headers: {
+      'Accepts': '*/*'
+    },
+    method: 'GET',
+  });
+  let res = await req.open({
+    encoding: 'utf-8',
+    storeResponse: true
+  });
+  await res.complete;
+  return new Media({
+    charset: res.encoding,
+    type: res.type,
+    data: Buffer.from(res.content),
+    length: res.content.length,
+    name: res.name(),
+    url: require('url').format(res.request.url())
+  });
+}
+
+/**
+ * @typedef {Object} MediaIndex
+ * @prop {import('./media.class')} Media
+ * @prop {markdown} markdown
+ * @prop {link} link
+ */
+
+/**@type {MediaIndex} */
+module.exports = {
+  markdown,
+  link,
+  Media
 }

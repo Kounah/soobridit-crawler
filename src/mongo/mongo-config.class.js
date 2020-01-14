@@ -1,5 +1,5 @@
-const defined = require('kouna-lib/fn/defined');
-const extend = require('kouna-lib/fn/extend');
+const defined = require('kouna-lib/functions/defined');
+const extend = require('kouna-lib/functions/extend');
 const url = require('url');
 
 /**@type {Class} */

@@ -2,6 +2,7 @@ const klib = require('kouna-lib');
 const defined = klib.fn.defined;
 const extend = klib.fn.extend;
 const mime = require('mime');
+const crypto = require('crypto');
 
 /**@type {Media} */
 const def = {
@@ -10,9 +11,7 @@ const def = {
   charset: 'utf-8',
 }
 
-/**
- * @typedef {Media} Class
- */
+/**@typedef {Media} Class*/
 class Media {
   /**
    * 
@@ -43,6 +42,11 @@ class Media {
      * @type {string}
      */
     this.url = defined(props.url, def.url);
+    /**
+     * hash
+     * @type {string}
+     */
+    this.hash = crypto.createHash('sha256').update(this.data).digest('hex');
   }
 }
 

@@ -3,11 +3,12 @@ const mongoose = require('mongoose');
 /**
  * @typedef {Object} Media
  * @prop {Buffer} data
- * @prop {String} type
- * @prop {Number} length
- * @prop {String} charset
- * @prop {String} name
- * @prop {String} url
+ * @prop {string} type
+ * @prop {number} length
+ * @prop {string} charset
+ * @prop {string} name
+ * @prop {string} url
+ * @prop {string} hash
  */
 
 let schema = new mongoose.Schema({

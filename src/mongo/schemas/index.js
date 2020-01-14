@@ -19,7 +19,6 @@ function fn(name, schema) {
 
 module.exports = {
   soobridit: fn('Soobridit', require('./soobridit')),
-  post: fn('Post', require('./post')),
   comment: fn('Comment', require('./comment')),
   user: fn('User', require('./user')),
   media: fn('Media', require('./media'))
